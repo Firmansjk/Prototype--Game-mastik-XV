@@ -12,6 +12,10 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("FreeRoamScene");
     }
 
+    public void GoBack()
+    {
+        SceneManager.LoadScene("FreeRoamScene");
+    }
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenuScene");

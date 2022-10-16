@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EngklekScene.unity
     guid: 73132df88967c41459400bcc23953cf4
+  - enabled: 1
+    path: Assets/Scenes/KelerengScene.unity
+    guid: 77d2d466e21142144b493b4666ce7101
+  - enabled: 1
+    path: Assets/Scenes/KartuWayangScene.unity
+    guid: 257e7a9e0ae2b26479877aa82585ddf0
   m_configObjects: {}
