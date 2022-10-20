@@ -7,6 +7,9 @@ public class BarController : MonoBehaviour
 {
     public Image powerUpImage;
     public Text powerText;
+
+    public Transform ujungBergerak;
+
     bool isPowerUp = true;
     bool isDirection = true;
     float power = 0;
@@ -27,7 +30,7 @@ public class BarController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            EndPower();
+            //EndPower();
         }
     }
 
