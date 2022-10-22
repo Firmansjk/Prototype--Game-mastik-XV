@@ -6,19 +6,18 @@ using UnityEngine.UI;
 public class BarController : MonoBehaviour
 {
     public Image powerUpImage;
-    public GameObject perfectTap;
-
-    //bool isPerfect = false;
+    public Text powerText;
+    float widthFill;
+    public float randomBorder;
     bool isPowerUp = true;
     bool isDirection = true;
-
     float power = 0;
     float powerSpeed = 100f;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -32,6 +31,8 @@ public class BarController : MonoBehaviour
         {
             //EndPower();
         }
+        widthFill = powerUpImage.GetComponent<RectTransform>().rect.width;
+        randomBorder = (widthFill*powerUpImage.fillAmount);
     }
 
     public void PowerActive()

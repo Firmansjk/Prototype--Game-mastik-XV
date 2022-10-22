@@ -7,6 +7,10 @@ public class MainMenuController : MonoBehaviour
 {
     public LoadSceneMode loadMode = LoadSceneMode.Single;
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("FreeRoamScene");

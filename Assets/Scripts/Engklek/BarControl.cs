@@ -74,15 +74,13 @@ public class BarControl : MonoBehaviour
         //}
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "PerfectTiming")
-        {
-            collision.gameObject.tag = "PerfectTiming";
-            barIS.tag = "PerfectTiming";
-        }
-    }
-
+    //private void OnTriggerEnter2D(Collider2D barIsCollider)
+    //{
+    //    if (barIsCollider.gameObject.tag == "PerfectTiming")
+    //    {
+    //        gameObject.tag = "PerfectTiming";
+    //    }
+    //}
     public void EndPower()
     {
         //isPowerUp = false;
