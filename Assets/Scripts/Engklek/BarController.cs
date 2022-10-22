@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public class BarController : MonoBehaviour
 {
     public Image powerUpImage;
-    public Text powerText;
+    public GameObject perfectTap;
 
-    public Transform ujungBergerak;
-
+    //bool isPerfect = false;
     bool isPowerUp = true;
     bool isDirection = true;
+
     float power = 0;
     float powerSpeed = 100f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

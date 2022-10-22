@@ -8,6 +8,7 @@ TagManager:
   - npcEgrang
   - npcKelereng
   - npcKartu
+  - PerfectTiming
   layers:
   - Default
   - TransparentFX

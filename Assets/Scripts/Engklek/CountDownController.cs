@@ -8,15 +8,15 @@ public class CountDownController : MonoBehaviour
     public int countDownTime;
     public Text countDownDisplay;
     public PlayerEngklekController player;
-    public BarController bar1;
+    public BarControl bar1;
     public RandomBar bar2;
 
     private void Start()
     {
         StartCoroutine(CountDownToStart());
         player = GameObject.Find("Player").GetComponent<PlayerEngklekController>();
-        bar1 = GameObject.Find("Canvas").GetComponent<BarController>();
-        bar2 = GameObject.Find("Canvas").GetComponent<RandomBar>();
+        bar1 = GameObject.Find("Barr").GetComponent<BarControl>();
+        bar2 = GameObject.Find("BarRed").GetComponent<RandomBar>();
     }
     IEnumerator CountDownToStart()
     {
@@ -31,7 +31,7 @@ public class CountDownController : MonoBehaviour
         countDownDisplay.text = "Mulai!";
         //disini class player engklek controller, dan bar bar an
         player.GetComponent<PlayerEngklekController>().enabled = true;
-        bar1.GetComponent<BarController>().enabled = true;
+        bar1.GetComponent<BarControl>().enabled = true;
         bar2.GetComponent<RandomBar>().enabled = true;
 
         yield return new WaitForSeconds(1f);

@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class RandomBar : MonoBehaviour
 {
     [SerializeField] Transform trBar;
-    public Image TargetBar;
-    private int minRandomBar=-321;
-    private int maxRandomBar=241;
-    private int stepSize = 40;
+    public GameObject TargetBar;
+    private int minRandomBar=-4;
+    private int maxRandomBar=4;
+    private int stepSize = 0;
     Vector3 originalPos;
 
     // Start is called before the first frame update
