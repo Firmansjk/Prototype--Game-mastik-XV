@@ -5,12 +5,22 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int speed;
+    public Animator anim;
+    public bool isFacingRight;
+    string idle_parameter = "Player_Idle";
+    string walk_parameter = "Player_Walk";
     Rigidbody2D rb;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+
+
     }
 
     // Update is called once per frame
@@ -25,5 +35,23 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(side * speed, rb.velocity.y);
         float upDown = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(rb.velocity.x, upDown * speed);
+        if (side != 0 || upDown != 0)
+        {
+            anim.SetTrigger(idle_parameter);
+        }
+        else
+        {
+            anim.SetTrigger(walk_parameter);
+        }
+        if (side > 0 && !isFacingRight)
+        {
+            transform.eulerAngles = Vector2.zero;
+            isFacingRight = true;
+        }
+        else if (side < 0 && isFacingRight)
+        {
+            transform.eulerAngles = Vector2.up * 180;
+            isFacingRight = false;
+        }
     }
 }

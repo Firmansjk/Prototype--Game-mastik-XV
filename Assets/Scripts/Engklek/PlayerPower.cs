@@ -8,7 +8,16 @@ public class PlayerPower : MonoBehaviour
     public RandomBar randomBar;
     public BarController barController;
     public PlayerEngklekController playerEngklekk;
-    // Start is called before the first frame update
+    public Animator anim;
+    public PlayerEngklekHealth playerEHealth;
+    public bool isFacingRight;
+    string idle_parameter = "PlayerEngklek_Idle";
+    string jump_parameter = "PlayerEngklek_Jump";
+
+    private void Awake()
+    {
+        anim = GameObject.Find("Player").GetComponent<Animator>();
+    }
     void Start()
     {
 
@@ -19,23 +28,23 @@ public class PlayerPower : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(barController.randomBorder >= (randomBar.TargetBar.rectTransform.anchoredPosition.x) && barController.randomBorder <= (randomBar.TargetBar.rectTransform.anchoredPosition.x + 50))
+            if (barController.randomBorder >= (randomBar.TargetBar.rectTransform.anchoredPosition.x) && barController.randomBorder <= (randomBar.TargetBar.rectTransform.anchoredPosition.x + 50))
             {
-                //Debug.Log(randomBar.TargetBar.rectTransform.anchoredPosition.x);
-                //Debug.Log(barController.randomBorder);
-                //Debug.Log("Berhasil");
+
                 playerEngklekk.bisaJalan = true;
+                anim.ResetTrigger(jump_parameter);
+                anim.SetTrigger(idle_parameter);
                 playerEngklekk.PlayerLompat();
                 randomBar.Randomizer();
             }
             else
             {
                 playerEngklekk.bisaJalan = false;
-                //Debug.Log(randomBar.TargetBar.rectTransform.anchoredPosition.x);
-                //Debug.Log(barController.randomBorder);
-                //Debug.Log("Gagal");
+                anim.ResetTrigger(idle_parameter);
+                anim.SetTrigger(jump_parameter);
+                playerEHealth.TakeDamage();
             }
-               
+
         }
     }
 }
